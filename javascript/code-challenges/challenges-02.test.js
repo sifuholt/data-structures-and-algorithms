@@ -77,6 +77,9 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
+  let newArr = [];
+  arr.forEach(num => newArr.push(2 ** num));
+  return newArr;
   // Solution code here...
 };
 
