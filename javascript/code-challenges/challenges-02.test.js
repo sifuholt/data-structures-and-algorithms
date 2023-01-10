@@ -25,7 +25,15 @@ const addOne = (arr) => arr.map(num => num + 1);
   // Solution code here...
 
 
-/* ------------------------------------------------------------------------------------------------
+
+// const addOne = (arr) => {
+//   let newArr = arr.map(element => {
+//     return element + 1;
+//   });
+//   return newArr;
+// };
+
+  /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Write a function named addQuestion that, given an array of strings, uses map to return a new array containing each string followed by a question mark character.
@@ -35,7 +43,15 @@ const addQuestion = (arr) => arr.map(str => str + '?');
   // Solution code here...
 
 
-/* ------------------------------------------------------------------------------------------------
+//
+// const addQuestion = (arr) => {
+  // let newArr = arr.map(element => {
+    // return element + '?';
+  // });
+  // return newArr;
+// };
+//
+  /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named forLoopTwoToThe that, given an array of integers as input, iterates over the array and returns a new array. The returned array should contain the result of raising 2 to the power of the original input element.
@@ -46,6 +62,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
+  let newArr = [];
+  for (let num of arr) {
+    newArr.push(2 ** num);
+  }
+  return newArr;
   // Solution code here...
 };
 
