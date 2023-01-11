@@ -56,6 +56,19 @@ CHALLENGE 4
 
 Write a function named forLoopTwoToThe that, given an array of integers as input, iterates over the array and returns a new array. The returned array should contain the result of raising 2 to the power of the original input element.
 
+* for...of
+* initialize an arr and then return. push some value into that arr.
+
+const forLoopTwoToThe = (arr) => {
+  let newArr = [];
+
+  for(let num of arr){
+    newArr.push(Math.pow(2,num));
+
+  }
+  return newArr;
+}
+
 You may choose to complete this challenge using a for loop, for...in syntax, or for...of syntax.
 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
