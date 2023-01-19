@@ -133,6 +133,22 @@ const gruffaloCrumble = {
   ]
 };
 
+// crumble is an object...which is recipe
+// ! recipe.ingredients
+// ! forEach - push some value in result array
+// ! slice(find the space + 1) ->> gallons fresh water = withoutAmount
+// ! slice (find the next space + 1) ->> return item = withoutUnit
+
+// const listFoods = (recipe) => {
+  // let result = [];
+  // recipe.ingredients.forEach(ingredient => {
+    // let withoutAmount = ingredient.slice(ingredient.indexOf(' ') + 1);
+    // let withoutUnit = ingredient.slice(withoutAmount.indexOf(' ') + 1);
+    // result.push(withoutUnit);
+    //
+  // });
+  // return result;
+// };
 
 const listFoods = (recipe) => {
   let result = [];
