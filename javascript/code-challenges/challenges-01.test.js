@@ -218,3 +218,9 @@ xdescribe('Testing challenge 7', () => {
     expect(fizzbuzz(inputs).length).toStrictEqual(16);
   });
 });
+
+
+
+[{"place_id":"309588762","licence":"https:\/\/locationiq.com\/attribution","boundingbox":["44.129698494315","44.449698494315","-121.38363730423","-121.06363730423"],"lat":"44.28969849431468","lon":"-121.22363730423093","display_name":"Deschutes County, Oregon, USA","class":"place","type":"postcode","importance":0.33499999999999996},{"place_id":"308586254","licence":"https:\/\/locationiq.com\/attribution","boundingbox":["20.4914","20.8114","-88.6864","-88.3664"],"lat":"20.6514","lon":"-88.5264","display_name":"Tinum, Yucat\u00e1n, 97756, Mexico","class":"place","type":"postcode","importance":0.33499999999999996},{"place_id":"178109273","licence":"https:\/\/locationiq.com\/attribution","osm_type":"way","osm_id":"292029912","boundingbox":["14.8540579","14.8541424","120.245696","120.2457806"],"lat":"14.85410015","lon":"120.2457383","display_name":"97756, Zambales Highway, Olongapo, Zambales, Central Luzon, 2200, Philippines","class":"building","type":"house","importance":0.11010000000000002}]
+
+
