@@ -74,7 +74,7 @@ const updateNumbers = (obj) => {
   }
 
   return newData;
-  
+
 };
 
 // const updateNumbers = (obj) => {
@@ -162,6 +162,20 @@ For example:
 hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
+
+const hasChildrenValues = (arr, character) => {
+  let children = true;
+  arr.forEach((person) => {
+    if (person.name === character) {
+      if (!person.children) {
+        children = false;
+      }
+    }
+  });
+  return children;
+};
+
+
 
 const hasChildrenValues = (arr, character) => {
   let children = 0;
