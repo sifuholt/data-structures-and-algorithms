@@ -101,6 +101,8 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
+// cookie stores is stores
+// inner and outer loop. for loop. salmon cookies
 
 
 const grandTotal = (stores) => {
@@ -186,6 +188,9 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 //
 // };
 
+
+
+
 const salesData = (hours, data) => {
   return hours.map((hour, index) => ({ sales: `${data[index]} cookies`, time: hour }));
 
@@ -241,7 +246,7 @@ const errands = [
 
 const howManyTreats = (arr) => {
   return arr[2].items[1].quantity;
-  
+
   // Solution code here...
 };
 
