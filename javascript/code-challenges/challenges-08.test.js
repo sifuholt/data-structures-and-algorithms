@@ -53,16 +53,46 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  return charArray.sort((a, b)) => {
+  charArray.sort((a, b) => a.children.length - b.children.length);
 
-    if(a.children.length < b.children.length){
-      return -1;
-    } else if(a.children.length > b.children.length){
-      return 1;
-    } else
-  }
-  // Solution code here...
+  return charArray;
 };
+
+// const sortByChildren = (charArray) => {
+  // if (a.children.length > b.children.length) {
+    // return 1;
+//
+  // } else if (a.children.length < b.children.length) {
+    // return -1;
+//
+  // } else if (a.children.length) {
+//
+  // } else {
+    // return a.house > b.
+  // }
+// }
+
+// const sortByChildren = (charArray) => {
+  // return charArray.sort((a, b => {
+//
+    // if (a.children.length > b.children.length) {
+      // return 1;
+//
+    // } else if (a.children.length < b.children.length) {
+      // return -1;
+//
+    // } else if (a.house > b.house) {
+      // return 1;
+//
+    // } else if (a.house < b.house) {
+      // return -1;
+//
+    // }
+//
+  // }));
+
+  // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -72,7 +102,7 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  let regex=/w/;
+  let regex = /w/;
   return regex.test(str);
   // Solution code here...
 };
@@ -90,7 +120,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  let regex=/ \d/;
+  let regex = / \d/;
   return regex(input);
   // Solution code here...
 };
@@ -103,9 +133,9 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  let regex=/world/;
+  let regex = /world/;
   return regex(input);
-  
+
   // Solution code here...
 };
 
@@ -130,10 +160,34 @@ CHALLENGE 6
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
-const citiesAtoJ = (arr) => {
-  // Solution code here...
+const citiesAtoJ = (str) => {
+
+  let regex = /\w*[A - Z]\w*/g;
+  return str.match(regex) || [];
+
 };
 
+//
+// const citiesAtoJ = (arr) => {
+  // let tempString = ', ' + arr.join(' ') + ', ';
+  // let tempArr = [];
+//
+  // let regex = /(?<=, ) [A - J].
+// }
+//
+// const citiesAtoJ = (arr) => {
+//
+  // let newArr = [];
+//
+  // for (let i = 0/ i < arr.length; i++) {
+    // let regex = /^[A-J]/g;
+    // arr[i].match(regex)? newArr.push(arr[i]) : [];
+//
+  // }
+  // return newArr;
+  // Solution code here...
+// };
+//
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
@@ -256,7 +310,7 @@ describe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
     const capitalResult = isCapitalized('We only want to Return the Words that begin With a capital Letter');
 
-    expect(capitalResult).toStrictEqual([ 'We', 'Return', 'Words', 'With', 'Letter' ]);
+    expect(capitalResult).toStrictEqual(['We', 'Return', 'Words', 'With', 'Letter']);
     expect(capitalResult.length).toStrictEqual(5);
 
     expect(isCapitalized('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given', 'Runnymede', 'Windsor', 'Staines', 'June', 'May']);
@@ -303,7 +357,7 @@ xdescribe('Testing challenge 8', () => {
   const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.';
 
   test('It should only return words that are immediately followed by a space', () => {
-    expect(noPunctuation(lorem)).toStrictEqual([ 'Lorem ', 'ipsum ', 'dolor ', 'sit ', 'consectetur ', 'adipiscing ', 'Cras ', 'lacinia ', 'vel ', 'massa ', 'sed ', 'Nunc ', 'faucibus ', 'iaculis ', 'a ', 'scelerisque ', 'enim ', 'condimentum ', 'Aenean ', 'ac ', 'scelerisque ', 'et ', 'pharetra ' ]);
+    expect(noPunctuation(lorem)).toStrictEqual(['Lorem ', 'ipsum ', 'dolor ', 'sit ', 'consectetur ', 'adipiscing ', 'Cras ', 'lacinia ', 'vel ', 'massa ', 'sed ', 'Nunc ', 'faucibus ', 'iaculis ', 'a ', 'scelerisque ', 'enim ', 'condimentum ', 'Aenean ', 'ac ', 'scelerisque ', 'et ', 'pharetra ']);
     expect(noPunctuation(lorem).length).toStrictEqual(23);
     expect(noPunctuation('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toEqual(expect.arrayContaining(['Given ', 'by ', 'our ', 'hand ', 'in ', 'the ', 'meadow ', 'that ', 'is ', 'called ', 'between ', 'Windsor ', 'and ', 'on ', 'the ', 'fifteenth ', 'day ', 'of ', 'June ', 'in ', 'the ', 'seventeenth ', 'year ', 'of ', 'our ', 'reign ', 'the ', 'new ', 'regnal ', 'year ', 'began ', 'on ', '28 ']));
   });
