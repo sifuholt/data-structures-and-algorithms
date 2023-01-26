@@ -62,7 +62,7 @@ const sortByChildren = (charArray) => {
     } else
   }
   // Solution code here...
-};
+})
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -105,7 +105,7 @@ Write a function named containsWorld that takes in a string or number of any len
 const containsWorld = (input) => {
   let regex=/world/;
   return regex(input);
-  
+
   // Solution code here...
 };
 

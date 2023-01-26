@@ -116,9 +116,6 @@ For example, ['Alphabet', 'alphabet', '.arrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  return arr.sort((a,b) => {
-    if()
-  })
   // Solution code here...
 };
 
