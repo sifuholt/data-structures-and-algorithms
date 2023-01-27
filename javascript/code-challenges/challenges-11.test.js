@@ -49,6 +49,13 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
+  let count = 0;
+
+  input.forEach(x => {
+    count += x.filter(z => z === target).length;
+
+  });
+  return count;
   // Solution code here...
 };
 
@@ -63,6 +70,8 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
+  return input.flat().reduce ((sum, curr) => sum + curr, 0);
+
   // Solution code here...
 };
 
@@ -79,6 +88,10 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
+  return input.map(newArr => {
+    return newArr.filter(e => typeof e === 'number' && e % 5 === 0).map(filteredElem => Math.pow(2, filteredElem));
+  });
+
   // Solution code here...
 };
 
@@ -145,6 +158,8 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
+  return data.filter(person => person.gender.includes('male')).map(character => character.name).join(' and ');
+
   // Solution code here...
 };
 
@@ -155,6 +170,8 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
+  return data.reduce((shortest, nextChar) => +shortest.height < +nextChar.height ? shortest : nextChar).name;
+
   // Solution code here...
 };
 
